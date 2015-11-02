@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/skeleton.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $('.tab-data').hide();
+            $('[data-content="' + $('#navTab li.active a').attr('data-label') + '"]').show();
+            $('#navTab li a').click(function () {
+                $('.tab-data').hide();
+                debugger;
+                $('#navTab li.active').removeClass('active');
+                $('[data-content="' + $(this).parents('li').addClass('active').end().attr('data-label') + '"]').show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <div id="company_area">
+                        <div id="company" class="mob_h"><a href="http://www.apartmentshoppe.co.in/" title="Apartment Shoppe"><img src="logo.png" alt="Apartment Shoppe" title="Apartment Shoppe"></a></div>
+                    </div>
+                </li>
+                <li class="navbar-item"><a class="navbar-link" href="Home.html">Home</a></li>
+                <li class="navbar-item active">
+                    <a class="navbar-link" href="Listing.html">Find Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Enquiry.html">Post Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Contact.html">Contact Us</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Portfolio.html">Our Work</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="About.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar-s navbar-fixed-top">
+        <div class="container">
+            <div id="company" class="u-pull-left"><a href="http://www.apartmentshoppe.co.in/" title="Apartment Shoppe"><img src="logo.png" alt="Apartment Shoppe" title="Apartment Shoppe"></a></div>
+            <div id="menu-toggle" class="u-pull-right"><a href="#menu"><i class="fa fa-bars"></i></a></div>
+        </div>
+    </nav>
+    <div id="menu" class="padding">
+        <ul class="list-style-none">
+            <li><a class="navbar-link" href="Home.html">Home</a></li>
+            <li>
+                <a class="navbar-link" href="Listing.html">Find Property</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Enquiry.html">Post Property</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Contact.html">Contact Us</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Portfolio.html">Our Work</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="About.html">About Us</a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Header section -->
+    <div class="content container">
+        <h1 class="margin-top">The Icon - Bangalore</h1>
+        <div class="divider divider-thick"></div>
+        <div class="row">
+            <div class="twelve columns">
+                <ul id="navTab" class="navbar-list list font-l">
+                    <li class="navbar-item active">
+                        <a data-label="Overview">Overview</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a data-label="Specifications">Specifications</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a data-label="Amenities">Amenities</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a data-label="Location Advantage">Location Advantage</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a data-label="IGBC Gold Rating">IGBC Gold Rating</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a data-label="Floor Plans">Floor Plans</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a data-label="Master Plan">Master Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bg-pale padding">
+        <div class="container">
+            <div id="selectedTab">
+                <div data-content="Overview" class="tab-data">
+                    <div id="projectHeader" data-content="Overview" class="tab-data card">
+                        <div class="row">
+                            <div class="two columns">
+                                <span><img class="u-full-width u-full-width" src="http://rei.wlimg.com/proj_images/project6274/proj_logo.png" alt="The Icon" title="The Icon"></span>
+                            </div>
+                            <div class="ten columns pt-sans">
+                                <h5 class="font-l">2/3/4 BHK Apartments - Bangalore</h5>
+                                <div class="divider"></div>
+                                <div>
+                                    <span class="font-bold">Project Type - </span>
+                                    <span>Residential Property - Flats &amp; Apartments</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold u-pull-left">Project Location :</span>
+                                    <span class="u-pull-left"> 13/2, Thanisandra Main Road, Adjacent to Manyata Tech Park, Thanisandra, Bangalore, Karnataka, India - 560077</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Overview</h3>
+                        <div class="divider"></div>
+                        <div>
+                            <p>THE ICON features 3 & 4 Bedrooms and Penthouses ranging from 1795 to 3097 sq. ft. Spacious, well designed and featuring the very best in fittings and materials - THE ICON creates incomparable value for money.</p>
+                            <p>A new lifestyle in Bengaluru. Homes designed for the modern lifestyle with facilities and features built for the modern family. A 25 lac sq ft development that is designed and built around todays family and tomorrow's needs. THE ICON creates a healthier lifestyle with the very best in outdoor recreation - taking care of the body and the mind. Provision for CONVENIENCE STORE, CHEMIST & ATMS that take care of your every convenience, after all daily chores shouldn't come in the way of living. THE ICON, eco friendly measures have been adopted to ensure the building for future sustenance & energy efficient.</p>
+                        </div>
+                        <div><h4>Have a glimpse</h4> <div class="divider"></div></div>
+                        <div>
+                            <ul class="bxslider navbar-list gutter">
+                                <li class="navbar-item">
+                                    <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_1.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_1-small.jpg" alt="The Icon" title="The Icon"></a></div>
+
+                                </li>
+                                <li class="navbar-item">
+                                    <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_2.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_2-small.jpg" alt="The Icon" title="The Icon"></a></div>
+
+                                </li>
+                                <li class="navbar-item">
+                                    <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_3.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_3-small.jpg" alt="The Icon" title="The Icon"></a></div>
+
+                                </li>
+                                <li class="navbar-item">
+                                    <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_4.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_4-small.jpg" alt="The Icon" title="The Icon"></a></div>
+
+                                </li>
+                                <li class="navbar-item">
+                                    <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_5.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/proj_img-6274_5-small.jpg" alt="The Icon" title="The Icon"></a></div>
+
+                                </li>
+                            </ul>
+                            <div class="u-cf"></div>
+                        </div>
+                    </div>
+                </div>
+                <div data-content="Specifications" class="tab-data u-cf u-full-width">
+                    <div class="card">
+                        <h3>Specifications</h3>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="twelve columns">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="font-bold">The Apartments</div>
+                                        <div>THE ICON features 3 & 4 Bedrooms and Penthouses ranging from 1795 to 3097 sq. ft. Spacious, well designed and featuring the very best in fittings and materials - THE ICON creates incomparable value for money.</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold">Living Room</div>
+                                        <div>Vitrified tiles flooring. Main door made of teak-wood frame with teak veneered shutter.</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold">Kitchen</div>
+                                        <div>Rectified Ceramic tiles, Ceramic Dado above counter up to 2 ft, Granite counter tops.</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold">Bedroom</div>
+                                        <div>Laminated wooden flooring for Master bedroom Rectified Ceramic for other bed rooms. Hard wood frame with flush shutters. A/c Point in master bed room.</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold">Toilets</div>
+                                        <div>Designer Ceramic tile flooring, Ceramic tile Dado up-to 7' height. Sanitary ware of reputed make. Ivory color for master toilet. White color for other toilets. Granite counter top wash basin. CP fixtures of reputed make like Jaquar or equivalent. Single lever mixers for shower & washbasin. Exhaust fans in all toilets.</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold">Security System</div>
+                                        <div>A fully integrated intercom / Security system from security office to apartment. Telephone points in living and all bed rooms. Fire protection and fighting system for the building as per statutory and fire safety requirements.</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold">Electrical System</div>
+                                        <div>Main distribution board for each flat with area wise MCB's. Concealed PVC conduits with copper wiring. Geyser points in all the toilets.100% back up for common services. Back up of 1.5 KW to 3 KW each flat.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Take a glance</h4> <div class="divider"></div>
+                        <div>
+                            <ul class="bxslider navbar-list gutter">
+                                <li class="navbar-item">
+                                    <div class="panel">
+                                        <div class="panel-heading">Living Room</div>
+                                        <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/6274-113304.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/6274-113304-small.jpg" alt="The Icon" title="The Icon"></a></div>
+                                    </div>
+                                </li>
+                                <li class="navbar-item">
+                                    <div class="panel">
+                                        <div class="panel-heading">Bedroom</div>
+                                        <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/6274-113305-small.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/6274-113305-small.jpg" alt="The Icon" title="The Icon"></a></div>
+                                    </div>
+                                </li>
+                                <li class="navbar-item">
+                                    <div class="panel">
+                                        <div class="panel-heading">Electrical System</div>
+                                        <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/6274-113306-small.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/6274-113306-small.jpg" alt="The Icon" title="The Icon"></a></div>
+                                    </div>
+                                </li>
+                                <li class="navbar-item">
+                                    <div class="panel">
+                                        <div class="panel-heading">Kitchen</div>
+                                        <div style="height: 205px;"><a class="fancybox" data-fancybox-group="showZoomImage" title="The Icon" href="http://rei.wlimg.com/proj_images/project6274/6274-113307-small.jpg"><img src="http://rei.wlimg.com/proj_images/project6274/6274-113307-small.jpg" alt="The Icon" title="The Icon"></a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="u-cf"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div data-content="Amenities" class="tab-data u-cf u-full-width card">
+                    <h3>Amenities</h3>
+                    <div class="divider"></div>
+
+                    <div class="row">
+                        <div class="twelve columns">
+                            <div>
+                                <h5 class="font-l">KEY FEATURES</h5>
+                                <ul>
+                                    <li>85% open space</li>
+                                    <li>Efficiency of 75% and above in the carpet area ratios</li>
+                                    <li>Putting green</li>
+                                    <li>Vehicle free movements at the surfece (Ground level)</li>
+                                    <li>Finished floor to roof height -10 feet</li>
+                                    <li>Visitor guest rooms -15 nos</li>
+                                    <li>Mini club house</li>
+                                    <li>Main club house with all indoor games</li>
+                                    <li>Servent's room with toilet provided in all in 3 and 4 BHK</li>
+                                    <li>Solar street lighting</li>
+                                    <li>Heated pool in the club house</li>
+                                    <li>IGBC GOLD RATING</li>
+                                    <li>Laminated wooden floor in the master bedroom (European Origin)</li>
+                                    <li>Cricket practice pitch with nets</li>
+                                    <li>Tennis courts</li>
+                                    <li>Motion sensor lighting for staircases</li>
+                                    <li>Bird nesting area</li>
+                                    <li>Elevators at 8 feet height</li>
+                                    <li>Main door with 8 feet</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-content="Location Advantage" class="tab-data u-cf u-full-width card">
+                    <h3>Location Advantage</h3>
+                    <div class="divider divider-thick"></div>
+
+                    <div class="row">
+                        <div class="twelve columns">
+                            <ul class="list-style-none">
+                                <li>
+                                    <h3 class=" font-xxl">
+                                        North Bengaluru - The Fastest Developing Region In Bengaluru
+                                    </h3>
+                                    <div class="divider"></div>
+                                    <p>
+                                        Thanisandra in NORTH BENGALURU is today witnessing an explosive growth which will propel it to literally the center of Bengaluru city over the next 5 years. From easy access to the very best in Healthcare and Education on its way, welcome to the changing face of North Bengaluru.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2 class=" font-xxl margin-top">
+                                        Infrastructure
+                                    </h2>
+                                    <div class="divider"></div>
+                                    <p>
+                                        <h4 class="font-l margin-bot underline">Thanisandra Main Road Widening Proposed Width 80 Ft</h4>
+                                        <div>NORTH BENGALURU is at an apt location, with easy access to International schools, nursery's and play homes, schools, colleges, the best and reputed hospitals, urbane and well known hotels, IT companies, Shopping malls, Banks and ATMS, petrol pumps, places of worship and bus stops.</div>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <h2 class=" font-xxl margin-top">
+                                        Business
+                                    </h2>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li>The IT Park and IT companies, which are located within NORTH BENGALURU, make it an upcoming and great business destination.</li>
+                                        <li>Manyata Tech Park - Walking Distance, ITPL Tech Park - 18 Kms.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h2 class=" font-xxl margin-top">
+                                        Lifestyle
+                                    </h2>
+                                    <div class="divider"></div>
+                                    <p>Being situated only 20 minutes away from MG Road, NORTH BENGALURU has easy and comfortable access to the main shopping destination of the city. With malls and stores at close proximity, shopping and entertainment becomes an easy option. Additionally, </p>
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                Shopping Malls - Esteem Mall, Msr Regalia Elements, Rmz Mall
+                                            </li>
+                                            <li>Several New - 5 Star Hotels, Westin, Oberoi, Hyatt, Four Seasons</li>
+                                            <li>Cafe, Restaurants - Walking Distance</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2 class=" font-xxl margin-top ">
+                                        Access
+                                    </h2>
+                                    <div class="divider"></div>
+                                    <p>It is well connected to different areas of bengaluru. With the airport only 30 minutes away, the railway station barely twenty minutes away. The prime city location MG road is again just twenty minutes away. Private/Public transportation are frequent and easy to find which makes the communication very convenient.</p>
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                ITPL IT Park Kirloskar IT Park - 7 KMS
+                                            </li>
+                                            <li>MG ROAD - 10 KMS</li>
+                                            <li>MEKHRI FLYOVER - 8 KMS</li>
+                                            <li>CITY RAILWAY STATION - 13 KMS</li>
+                                            <li>INTERNATIONAL AIRPORT - 25 KMS</li>
+                                            <li>UPCOMING METRO - 0.5 KM</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2 class=" font-xxl margin-top">
+                                        Education
+                                    </h2>
+                                    <div class="divider"></div>
+                                    <p>NORTH BENGALURU is well populated with all types of educational institutions, right from International schools to nursery's to Public School to colleges of the best reputation.</p>
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                CANADIAN INTERNATIONAL SCHOOL
+                                            </li>
+                                            <li>RYAN INTERNATIONAL SCHOOL</li>
+                                            <li>MEKHRI FLYOVER - 8 KMS</li>
+                                            <li>DELHI PUBLIC SCHOOL</li>
+                                            <li>VIDYA NIKETAN SCHOOL</li>
+                                            <li>VIDYA SHILP ACADEMY</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2 class=" font-xxl margin-top">
+                                        Neighbourhood
+                                    </h2>
+                                    <div class="divider"></div>
+                                    <p>The location is a friendly and family oriented neighbourhood. It is safe and has arrangements to make sure that all members of the families are at ease. There is no dearth of day care centers, hotels and restaurants and leisure / green spaces.</p>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div data-content="IGBC Gold Rating" class="tab-data u-cf u-full-width card">
+                    <h3>IGBC Gold Rating</h3>
+                    <div class="divider divider-thick"></div>
+
+                    <div class="row">
+                        <div class="twelve columns">
+                            <h4 class="font-l underline">Design for IGBC green homes gold rating</h4>
+                            <div class="row">
+                                <div class="three columns">
+                                    <img src="http://rei.wlimg.com/proj_images/project6274/6274-113303-small.jpg" alt="The Icon" title="The Icon" class="u-full-width">
+                                </div>
+                                <div class="nine columns">
+                                    <p> In THE ICON, eco friendly measures have been adopted to ensure the building is energy efficient and for future sustenance.</p>
+                                </div>
+                            </div>
+                            <p>
+                                <h5 class="font-l underline">Features</h5>
+                                <ul>
+                                    <li>
+                                        Sewage treatment plant with recirculation of water
+                                    </li>
+                                    <li>Rain water Harvesting</li>
+                                    <li>Solar water heater panels for the club</li>
+                                    <li>Solar energy street lights</li>
+                                    <li>Motion sensor lights for staircases</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-content="Floor Plans" class="tab-data u-cf u-full-width card">
+                    <h3>Floor Plans</h3>
+                    <div class="divider divider-thick"></div>
+                    <div class="row pt-sans">
+                        <div class="twelve columns bgap">
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Large Type - I
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113259-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Large Type - II A
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113260-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Large Type - II B
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113261-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                        </div>
+                        <div class="twelve columns margin-top bgap">
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Large Type - III A
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113262-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Large Type - III B
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113263-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Small Type - II A - 1875 Sqft
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113268-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                        </div>
+                        <div class="twelve columns margin-top bgap">
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Small Type - II B
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113264-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Small Type - II C
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113265-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Small Type 1B
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113266-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                        </div>
+                        <div class="twelve columns margin-top bgap">
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    3 BHK Small Type IA
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113267-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    4 BHK Type - I A
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113269-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    4 BHK Type - I B
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113270-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                        </div>
+                        <div class="twelve columns margin-top bgap">
+                            <div class="one-third column">
+                                <h4 class="font-l">
+                                    4 BHK Type II - 3097 Sqft
+                                </h4>
+                                <img class="u-full-width border padding" src="http://rei.wlimg.com/proj_images/project6274/6274-113271-small.jpg" alt="The Icon" title="The Icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER  -->
+    <div id="footer" class="container">
+        <div>
+            <h5>Contact Us</h5>
+            <div class="divider divider-thick"></div>
+            <div class="row bgap">
+                <div class="twelve columns">
+                    <div class="pt-sans" id="contactNum">
+                        <div class="u-pull-left">
+                            <i class="circle-icon fa fa-mobile circle-amber margin-right"></i><span>+91-9945000444, &nbsp;+91-9900249858, &nbsp;+91-9886095010</span>
+                            <div class="pt-sans u-cf tgap"><i class="circle-icon fa fa-mail-forward circle-green margin-right"></i>info@krsnaproperties.com</div>
+                        </div>
+                        <div id="fbBtn" class="u-pull-right">
+                            <a class="button u-full-width" target="_blank" href="https://www.facebook.com/Blueboyestates"><i class="circle-icon fa fa-facebook btn-fa circle-blue margin-right"></i>Find us on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider-thick"></div>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="#">Find Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Enquiry.html">Post Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Portfolio.html">Our Work</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="About.html">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <ul class="navbar-list pt-sans">
+                <li class="navbar-item">
+                    <div class="navbar-link  font-s" href="#"><i class="fa fa-copyright"></i>&nbsp;Apartment Shoppe 2015 - 2016</div>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link  font-s" href="#">Terms & Conditions</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

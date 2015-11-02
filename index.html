@@ -1,7 +1,527 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" />
+    <script src="js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+    <script src="js/jquery.tinycarousel.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/tinycarousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/skeleton.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $('#slider').nivoSlider({
+                effect: 'random',
+                directionNav: true,
+                controlNav: false,
+                pauseOnHover: true,
+                prevText: '',
+                nextText: '',
+            });
+
+            $('#slider1').tinycarousel({
+                buttons: true,
+                bullets: true,
+                infinite: true,
+                interval: true,
+            });
+        });
+    </script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <div id="company_area">
+                        <div id="company" class="mob_h"><a href="http://www.apartmentshoppe.co.in/" title="Apartment Shoppe"><img src="logo.png" alt="Apartment Shoppe" title="Apartment Shoppe"></a></div>
+                    </div>
+                </li>
+                <li class="navbar-item active"><a class="navbar-link" href="#intro">Home</a></li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Listing.html">Find Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="#">Post Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Contact.html">Contact Us</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Portfolio.html">Our Work</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="About.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar-s navbar-fixed-top">
+        <div class="container">
+            <div id="company" class="u-pull-left"><a href="http://www.apartmentshoppe.co.in/" title="Apartment Shoppe"><img src="logo.png" alt="Apartment Shoppe" title="Apartment Shoppe"></a></div>
+            <div id="menu-toggle" class="u-pull-right"><a href="#menu"><i class="fa fa-bars"></i></a></div>
+        </div>
+    </nav>
+    <div id="menu" class="padding">
+        <ul class="list-style-none">
+            <li><a class="navbar-link" href="#">Home</a></li>
+            <li>
+                <a class="navbar-link" href="Listing.html">Find Property</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Enquiry.html">Post Property</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Contact.html">Contact Us</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Portfolio.html">Our Work</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="About.html">About Us</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container content">
+        <div class="margin-top bgap">
+            <div class="slider-wrapper theme-default">
+                <div class="ribbon"></div>
+                <div id="slider" class="nivoSlider">
+                    <img src="images/project.jpg" alt="" />
+                    <img src="images/project2.jpg" alt="" title="This is an example of a caption" />
+                    <img src="images/project3.jpg" alt="" />
+                </div>
+                <div id="htmlcaption" class="nivo-html-caption">
+                    <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns center"><h1>What is Apartment Shoppe</h1></div>
+            <div class="twelve columns">
+                <div class="font-l">
+                    <p>Apartment Shoppe is a respected Property Dealer In Bangalore offering assistance to clients who want to Buy Sell Rent Properties In Bangalore. Being a reliable Real Estate Agent in Bangalore, we are engaged in providing Property Buying Services, Property Selling Services and Property Rental Services.</p>
+                    <p> Our expertise extends to Residential property, Commercial property and Industrial Property. Apart from these, we are also a competent Property Loan Consultant & even provide Property Valuation Services.</p>
+                </div>
+                <div><a href="#">Read More...</a></div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container bgap">
+        <div class="row">
+            <div class="twelve columns center">
+                <h2>New Projects</h2>
+                <div id="slider1">
+                    <a class="buttons prev" href="#">&#60;</a>
+                    <div class="viewport">
+                        <ul class="overview">
+                            <li>
+                                <div><a href="#">Karle Town Centre</a></div>
+                                <img src="images/proj_img-6277_1-small.jpg" />
+                                <p>The Karle Town Centre township is designed to offer the perf...</p>
+                                <button>Read More</button>
+                            </li>
+                            <li>
+                                <div><a href="#">Legacy Salvador</a></div>
+                                <img src="images/proj_img-6846_1-small.jpg" />
+                                <p>Legacy was established by experts in the construction busine...</p>
+                                <button>Read More</button>
+                            </li>
+                            <li>
+                                <div><a href="#">Century Ethos</a></div>
+                                <img src="images/proj_img-6286_1-small.jpg" />
+                                <p>Century Ethos is destined to be a Bangalore landmark. Conven...</p>
+                                <button>Read More</button>
+                            </li>
+                            <li>
+                                <div><a href="#">Water Edge</a></div>
+                                <img src="images/proj_img-6281_1-small.jpg" />
+                                <p>Equinox Water Edge, a premium project of Equinox Realty, is ...</p>
+                                <button>Read More</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="buttons next" href="#">&#62;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<hr />-->
+    <div class="bg-pale bgap">
+        <div class="container">
+            <div class="row">
+                <div id="featureContainer" class="seven columns">
+                    <div id="featured" class="card">
+                        <h5>Featured Properties</h5>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="six columns">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/no_image.jpg" />
+                                            </div>
+                                            <div class="nine columns pt-sans">
+                                                <a href="#">3 BHK Bungalows / Villas ...</a>
+                                                <div>2020 Sq. Feet / 2020 Sq. Feet / 3 Bedrooms / 3 Bat.</div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/no_image.jpg" />
+                                            </div>
+                                            <div class="nine columns pt-sans">
+                                                <a href="#">3 BHK Flats & Apartments ...</a>
+                                                <div>
+                                                    2850 Sq. Feet / 2850 Sq. Feet / 3 Bedrooms
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/no_image.jpg" />
+                                            </div>
+                                            <div class="nine columns pt-sans">
+                                                <a href="#">3 BHK Flats & Apartments ...</a>
+                                                <div>
+                                                    2350 Sq. Feet / 2350 Sq. Feet / 3 Bedrooms
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="six columns">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/no_image.jpg" />
+                                            </div>
+                                            <div class="nine columns pt-sans">
+                                                <a href="#">3 BHK Flats & Apartments ...</a>
+                                                <div>
+                                                    1795 Sq. Feet / 1795 Sq. Feet / 3 Bedrooms
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/no_image.jpg" />
+                                            </div>
+                                            <div class="nine columns pt-sans">
+                                                <a href="#">1959 Sq. Feet Individual ...</a>
+                                                <div>
+                                                    1959 Sq. Feet
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/no_image.jpg" />
+                                            </div>
+                                            <div class="nine columns pt-sans">
+                                                <a href="#">3 Bhk Flats & Apartments ...</a>
+                                                <div>
+                                                    1832 Sq. Feet / 1832.54 Sq. Feet / 3 Bedrooms
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="services" class="card">
+                        <h5>Real Estate Services</h5>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="six columns">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/property-valuation-services-31749.jpg" />
+                                            </div>
+                                            <div class="nine columns">
+                                                <a href="#">Property Valuation Services</a>
+                                                <div>
+                                                    We have experts working for us who ensure that the properties are accurately valu...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/property-loan-consultant-31748.jpg" />
+                                            </div>
+                                            <div class="nine columns">
+                                                <a href="#">Property Loan Consultant</a>
+                                                <div>
+                                                    They can advise clients; regarding the best plans suitable for them & help with the loan a...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/renting-property-31747.jpg" />
+                                            </div>
+                                            <div class="nine columns">
+                                                <a href="#">Renting Property</a>
+                                                <div>
+                                                    With our well –maintained database containing information regarding Properties available...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="six columns">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/buying-property.jpg" />
+                                            </div>
+                                            <div class="nine columns">
+                                                <a href="#">Buying Property</a>
+                                                <div>
+                                                    We ensure that the clients’ requirements regarding the kind of property they want...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="three columns">
+                                                <img class="u-full-width" src="images/selling-property-31746.jpg" />
+                                            </div>
+                                            <div class="nine columns">
+                                                <a href="#">Selling Property</a>
+                                                <div>
+                                                    We ensure that the client’s Property For Sale finds suitable buyers in shortest possible...
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top"><button>Read More</button></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="six columns"><a href="#"><div><img src="images/sell_property.png" class="u-full-width" alt="Sell property" /></div></a></div>
+                            <div class="six columns"><a href="#"><div><img src="images/buy_property.png" class="u-full-width" alt="Buy property" /></div></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="five columns">
+                    <ul class="list-style-none card">
+                        <li>
+                            <h5>Property by city</h5>
+                            <div class="divider"></div>
+                            <div><a href="#">Properties in north Bangalore</a></div>
+                        </li>
+                        <li>
+                            <h5>Search for Property</h5>
+                            <div class="divider"></div>
+                            <div class="searchProperty">
+                                <p class="mb2px">I Want to</p>
+                                <div class="mb7px">
+                                    <select class="w90" name="want_to" onchange="showme(this.value)">
+                                        <option value="1" selected="">Buy</option>
+                                    </select>
+                                </div>
+                                <p class="mb2px">Property Type</p>
+                                <div class="mb7px">
+                                    <select class="w90" name="property_type">
+                                        <option value="">Any</option>
+                                        <option value="5">Residential Property</option>
+                                        <option value="9">--Individual House/Home</option>
+                                        <option value="8">--Flats &amp; Apartments</option>
+                                        <option value="48">--Bungalows / Villas</option>
+                                    </select>
+                                </div>
+                                <p class="mb2px">City</p>
+                                <div class="mb7px">
+                                    <select name="city_id" class="w90">
+                                        <option value="">Any</option>
+                                        <option value="1317">Bangalore</option>
+                                        Warning: Invalid argument supplied for foreach() in /home/indianyp/indianyellowpages.com/htdocs/bizpage/created_htm_dir_live/rei/137628/index.htm on line 451
+
+                                        Call Stack:
+                                        0.0019    1229720   1. {main}() /home/indianyp/indianyellowpages.com/htdocs/bizpage/dynamiccatalog/index.php:0
+                                        0.0079    1954656   2. check_include_file() /home/indianyp/indianyellowpages.com/htdocs/bizpage/dynamiccatalog/index.php:317
+                                        0.0083    2099456   3. require('/home/indianyp/indianyellowpages.com/htdocs/bizpage/created_htm_dir_live/rei/137628/index.htm') /home/indianyp/indianyellowpages.com/htdocs/bizpage/dynamiccatalog/index.php:20
+
+                                        <option value="6049">Bangalore North</option>
+                                        <option value="6727">--Bellari Road</option>
+                                        <option value="6075">--Hebbal</option>
+                                        <option value="6753">--Thanisandra</option>
+                                        <option value="6052">Bangalore South</option>
+                                        <option value="6089">--Koramangala</option>
+                                    </select>
+                                </div>
+                                <p class="mb2px">Budget:</p>
+                                <div class="mb10px">
+                                    <div style="display:block" id="sell">
+                                        <select name="sell_price" class="w90">
+                                            <option value="0"> INR </option>
+                                            <option value="0-700000"> Below 7 Lacs </option>
+                                            <option value="700000-1500000"> 7 to 15 Lacs </option>
+                                            <option value="1500000-2500000"> 15 to 25 Lacs </option>
+                                            <option value="2500000-4000000"> 25 to 40 Lacs </option>
+                                            <option value="4000000-6000000"> 40 to 60 Lacs </option>
+                                            <option value="6000000-10000000"> 60 to 100 Lacs </option>
+                                            <option value="10000000-15000000"> 1 to 1.5 crores </option>
+                                            <option value="15000000-20000000"> 1.5 to 2 crores </option>
+                                            <option value="20000000-25000000"> 2 to 2.5 crores </option>
+                                            <option value="25000000-50000000"> 2.5 to 5 crores </option>
+                                            <option value="50000000-100000000"> 5 to 10 crores </option>
+                                            <option value="100000000-150000000"> 10 to 15 crores </option>
+                                            <option value="150000000-200000000"> 15 to 20 crores </option>
+                                            <option value="200000000-250000000"> 20 to 25 crores </option>
+                                            <option value="250000000-300000000"> 25 to 30 crores </option>
+                                            <option value="300000000-350000000"> 30 to 35 crores </option>
+                                            <option value="350000000-400000000"> 35 to 40 crores </option>
+                                            <option value="400000000-450000000"> 40 to 45 crores </option>
+                                            <option value="450000000-500000000"> 45 to 50 crores </option>
+                                            <option value="500000000-550000000"> 50 to 55 crores </option>
+                                            <option value="550000000-600000000"> 55 to 60 crores </option>
+                                            <option value="600000000-650000000"> 60 to 65 crores </option>
+                                            <option value="650000000-700000000"> 65 to 70 crores </option>
+                                            <option value="700000000-750000000"> 70 to 75 crores </option>
+                                            <option value="750000000-800000000"> 75 to 80 crores </option>
+                                            <option value="800000000-850000000"> 80 to 85 crores </option>
+                                            <option value="850000000-900000000"> 85 to 90 crores </option>
+                                            <option value="900000000-950000000"> 90 to 95 crores </option>
+                                            <option value="950000000-1000000000"> 95 to 100 crores </option>
+                                        </select>
+                                    </div>
+                                    <div style="display:none" id="rent">
+                                        <select name="rent_price" class="w90">
+                                            <option value="0"> INR </option>
+                                            <option value="0-5000"> Below 5000 </option>
+                                            <option value="5000-10000"> 5000 to 10000 </option>
+                                            <option value="10000-15000"> 10000 to 15000 </option>
+                                            <option value="15000-20000"> 15000 to 20000 </option>
+                                            <option value="20000-25000"> 20000 to 25000 </option>
+                                            <option value="25000-30000"> 25000 to 30000 </option>
+                                            <option value="30000-35000"> 30000 to 35000 </option>
+                                            <option value="35000-40000"> 35000 to 40000 </option>
+                                            <option value="40000-45000"> 40000 to 45000 </option>
+                                            <option value="45000-50000"> 45000 to 50000 </option>
+                                            <option value="50000-55000"> 50000 to 55000 </option>
+                                            <option value="55000-60000"> 55000 to 60000 </option>
+                                            <option value="60000-65000"> 60000 to 65000 </option>
+                                            <option value="65000-70000"> 65000 to 70000 </option>
+                                            <option value="70000-75000"> 70000 to 75000 </option>
+                                            <option value="75000-80000"> 75000 to 80000 </option>
+                                            <option value="80000-85000"> 80000 to 85000 </option>
+                                            <option value="85000-90000"> 85000 to 90000 </option>
+                                            <option value="90000-95000"> 90000 to 95000 </option>
+                                            <option value="95000-100000"> 95000 to 100000 </option>
+                                            <option value="100000-150000"> 1 lac to 1.5 Lacs </option>
+                                            <option value="150000-200000"> 1.5 lac to 2 Lacs </option>
+                                            <option value="200000-250000"> 2 lac to 2.5 Lacs </option>
+                                            <option value="250000-300000"> 2.5 lac to 3 Lacs </option>
+                                            <option value="300000-350000"> 3 lac to 3.5 Lacs </option>
+                                            <option value="350000-400000"> 3.5 lac to 4 Lacs </option>
+                                            <option value="400000-450000"> 4 lac to 4.5 Lacs </option>
+                                            <option value="450000-500000"> 4.5 lac to 5 Lacs </option>
+                                            <option value="500000"> Above 5 Lacs </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p><input type="submit" value="SEARCH" class="button b large p5px10px" pmbx_context="32C699E9-EF42-4891-AC47-FA5D299960F9"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="six columns"><a href="#"><div class=""><img src="images/emi_calculator.png" class="u-full-width" alt="EMI Calculator" /></div></a></div>
+                                <div class="six columns"><a href="#"><div class=""><img src="images/area_converter.png" class="u-full-width" alt="EMI Calculator" /></div></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer" class="container">
+        <div>
+            <h5>Contact Us</h5>
+            <div class="divider divider-thick"></div>
+            <div class="row bgap">
+                <div class="twelve columns">
+                    <div class="pt-sans" id="contactNum">
+                        <div class="u-pull-left">
+                            <i class="circle-icon fa fa-mobile circle-amber margin-right"></i><span>+91-9945000444, &nbsp;+91-9900249858, &nbsp;+91-9886095010</span>
+                            <div class="pt-sans u-cf tgap"><i class="circle-icon fa fa-mail-forward circle-green margin-right"></i>info@krsnaproperties.com</div>
+                        </div>
+                        <div id="fbBtn" class="u-pull-right">
+                            <a class="button u-full-width" target="_blank" href="https://www.facebook.com/Blueboyestates"><i class="circle-icon fa fa-facebook btn-fa circle-blue margin-right"></i>Find us on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider-thick"></div>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Listing.html">Find Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Enquiry.html">Post Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Portfolio.html">Our Work</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="About.html">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <ul class="navbar-list pt-sans">
+                <li class="navbar-item">
+                    <div class="navbar-link  font-s" href="#"><i class="fa fa-copyright"></i>&nbsp;Apartment Shoppe 2015 - 2016</div>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link  font-s" href="#">Terms & Conditions</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

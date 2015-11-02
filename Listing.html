@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/skeleton.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $('#title').text('Find Property');
+            $('#apt, #indie, #bhk, #details').hide();
+            $('#propertyChoice').on('change', function () {
+                $('#defaultList').hide();
+                var _selected = $('option:selected').val(),
+                    _opts = ['Bungalows / Villas', 'Flats & Apartments', 'Individual House/Home'];
+
+                if (_selected == _opts[0]) {
+                    $('#apt, #indie').hide();
+                    $('#bhk').show();
+                } else if (_selected == _opts[1]) {
+                    $('#bhk, #indie').hide();
+                    $('#apt').show();
+                } else if (_selected == _opts[2]) {
+                    $('#bhk, #apt').hide();
+                    $('#indie').show();
+                }
+            });
+
+            $('.panel-heading a, .detail').click(function () {
+                $('#apt, #indie, #bhk, #defaultList, #form').hide();
+                var _title = $('#title').html('Displaying: <span class="font-s">' + $(this).text() + '</span>');
+
+                if (!$(this).hasClass('detail'))
+                    _title = $(this).text();
+                else
+                    _title = $(this).parents('.panel').find('.panel-heading').text();
+                $('#title').html('Displaying: <span class="font-s">' + _title + '</span>');
+                $('#details').show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <div id="company_area">
+                        <div id="company" class="mob_h"><a href="http://www.apartmentshoppe.co.in/" title="Apartment Shoppe"><img src="logo.png" alt="Apartment Shoppe" title="Apartment Shoppe"></a></div>
+                    </div>
+                </li>
+                <li class="navbar-item"><a class="navbar-link" href="Home.html">Home</a></li>
+                <li class="navbar-item active">
+                    <a class="navbar-link" href="#">Find Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Enquiry.html">Post Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Contact.html">Contact Us</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Portfolio.html">Our Work</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="About.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar-s navbar-fixed-top">
+        <div class="container">
+            <div id="company" class="u-pull-left"><a href="http://www.apartmentshoppe.co.in/" title="Apartment Shoppe"><img src="logo.png" alt="Apartment Shoppe" title="Apartment Shoppe"></a></div>
+            <div id="menu-toggle" class="u-pull-right"><a href="#menu"><i class="fa fa-bars"></i></a></div>
+        </div>
+    </nav>
+    <div id="menu" class="padding">
+        <ul class="list-style-none">
+            <li><a class="navbar-link" href="Home.html">Home</a></li>
+            <li>
+                <a class="navbar-link" href="#">Find Property</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Enquiry.html">Post Property</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Contact.html">Contact Us</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="Portfolio.html">Our Work</a>
+            </li>
+            <li>
+                <a class="navbar-link" href="About.html">About Us</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container content bgap">
+
+        <div class="row">
+            <div id="sidebar" class="three columns card">
+                <h2 class="font-xxl">
+                    Services
+                </h2>
+                <div class="divider"></div>
+                <table class="font-l u-full-width pt-sans">
+                    <tr>
+                        <td><a href="enquiry.html">Buy Property</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="enquiry.html">Sell Property</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="enquiry.html">Rent Property</a></td>
+                    </tr>
+                    <tr>
+                        <td><a>Property Loan Consultant</a></td>
+                    </tr>
+                    <tr>
+                        <td><a>Property Valuation Services</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="nine columns pt-sans">
+                <h1 id="title" class="margin-top font-2halfx"></h1>
+                <div class="divider divider-thick"></div>
+                <div id="form">
+                    <select id="propertyChoice">
+                        <option selected disabled>Select a property type</option>
+                        <option value="Bungalows / Villas">
+                            Bungalows / Villas
+                        </option>
+                        <option value="Flats & Apartments">
+                            Flats & Apartments
+                        </option>
+                        <option value="Individual House/Home">
+                            Individual House/Home
+                        </option>
+                    </select>
+                </div>
+                <div class="bg-pale padding">
+                    <div id="list" class="pt-sans">
+                        <div id="defaultList" class="padding"> Please Select the type of property you want to search for.</div>
+                        <div id="bhk">
+                            <div class="row">
+                                <div class="six columns">
+                                    <ul class="list-style-none">
+                                        <li>
+                                            <div class="panel margin-top-none">
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">3 BHK Bungalows / Villas for Sale in Hebbal, Bangalore North - (Hebbal/Bangalore North) </a></h5>
+                                                <div class="panel-body bgap">2020 Sq. Feet / 2020 Sq. Feet / 3 Bedrooms / 3 Bathroom<div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="apt">
+                            <div class="row">
+                                <div class="six columns">
+                                    <ul class="list-style-none">
+                                        <li>
+                                            <div class="panel  margin-top-none">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">2 Bhk Flats & Apartments for Sale in Bangalore</a></h5>
+                                                <div class="panel-body bgap">
+                                                    (Bangalore/Karnataka) 1330 Sq. Feet / 2 Bedrooms
+                                                    <div><a href="#" class="detail">More Details</a></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="panel">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">4 Bhk Flats & Apartments for Sale in Bangalore North</a></h5>
+                                                <div class="panel-body bgap">(Bangalore North/Karnataka) 2400 Sq. Feet / 2400 Sq. Feet / 4 Bedrooms<div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="panel">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">3 BHK Flats & Apartments for Sale in Bellari Road, Bangalore North</a></h5>
+                                                <div class="panel-body bgap"> (Bellari Road/Bangalore North) 2850 Sq. Feet / 2850 Sq. Feet / 3 Bedrooms<div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="panel">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">3 BHK Flats & Apartments for Sale in Thanisandra, Bangalore North</a></h5>
+                                                <div class="panel-body bgap">(Thanisandra/Bangalore North) 1795 Sq. Feet / 1795 Sq. Feet / 3 Bedrooms<div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="six columns">
+                                    <ul class="list-style-none">
+                                        <li>
+                                            <div class="panel  margin-top-none">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">3 BHK Flats & Apartments for Sale in Hebbal</a></h5>
+                                                <div class="panel-body bgap"> (Hebbal/Bangalore North) 2350 Sq. Feet / 2350 Sq. Feet / 3 Bedrooms<div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="panel">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">3 BHK Flats & Apartments for Sale in Bangalore </a></h5>
+                                                <div class="panel-body bgap">(Bangalore/Karnataka) 1765 Sq. Feet / 1765 Sq. Feet / 3 Bedrooms <div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="panel">
+
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">3 Bhk Flats & Apartments for Sale in Koramangala, Bangalore South </a></h5>
+                                                <div class="panel-body bgap"> (Koramangala/Bangalore South) 1832 Sq. Feet / 1832.54 Sq. Feet / 3 Bedrooms <div><a href="#" class="detail">More Details</a></div>     </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="indie">
+                            <div class="row">
+                                <div class="six columns">
+                                    <ul class="list-style-none">
+                                        <li>
+                                            <div class="panel  margin-top-none">
+                                                <h5 class="font-l panel-heading underline margin-bot"><a href="#">1959 Sq. Feet Individual House/Home for Sale in Hebbal, Bang </a></h5>
+                                                <div class="panel-body bgap">(Hebbal/Bangalore North) 1959 Sq. Feet <div><a href="#" class="detail">More Details</a></div>     </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="details" class="padding">
+                            <div class="panel margin-top-none">
+                                <h5 class="panel-heading">Property Details</h5><div class="panel-body bgap">
+                                    <div class="row">
+                                        <div class="six columns">
+                                            <table class="u-full-width">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Property ID</b></td>
+                                                        <td>REI443707</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Property For </b></td>
+                                                        <td>Sell</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Society Name</b> </td>
+                                                        <td>Township</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><b>Area</b> </td>
+
+                                                        <td>
+                                                            <script type="text/javascript">
+                                                                    area_conversion = function (b, f, e) { var c = createAreaArr(); if (e == 1) { if (b < 20 && b != 18) { var a = f / c[b]; return a } else { return 0 } } else { if (e == 2) { if (b < 20 && b != 18) { var d = f * c[b]; return d } else { return 0 } } } };
+
+
+                                                                    function createAreaArr() { var a = new Array(); a[1] = 1; a[2] = 0.1111111111111; a[3] = 0.093; a[4] = 0.00041666667; a[5] = 0.013890889; a[6] = 0.000091810503; a[7] = 0.002222222222222223; a[8] = 0.0036724201; a[9] = 0.0009182736455464; a[10] = 0.00092936802973; a[11] = 0.0000028696051; a[12] = 0.00002295663; a[13] = 0.000057392103; a[14] = 0.0013888889; a[15] = 0.0000092904166; a[16] = 0.003673095; a[17] = 0.0000092605969; a[19] = 0.002295684; return a }
+
+
+                                                                    function updateArea(a, c, d, h, b, w) {
+                                                                        var g = createAreaArr();
+
+                                                                        var bu = new Array();
+                                                                        bu['Sq.Feet'] = '1';
+                                                                        bu['Sq. Yards'] = '2';
+                                                                        bu['Sq. Meter'] = '3';
+                                                                        bu['Guntha'] = '9';
+                                                                        bu['Ares'] = '10';
+                                                                        bu['Acre'] = '12';
+                                                                        bu['Bigha'] = '13';
+                                                                        bu['Hectares'] = '15';
+                                                                        bu['Marla'] = '16';
+                                                                        bu['Cent'] = '19';
+
+                                                                        if (w == "Sq. Feet") {
+
+                                                                            var e = d * g[c];
+                                                                        }
+                                                                        else {
+
+                                                                            var e = g[c] * (d / g[bu[w]]);
+                                                                        }
+
+                                                                        jQuery("#areaValue").html(e.toFixed(2));
+                                                                    }
+
+                                                                    function convert(basetext, baseindex, baseunit) {
+                                                                        var _val = $('#areaValue').val();
+                                                                        if (_val > 0) updateArea(basetext, baseindex, _val, 'builtupArea', 'Y', baseunit);
+                                                                    }
+                                                            </script>
+                                                            <span id="areaValue">1959</span>
+                                                            <select id="unit">
+                                                                <option selected><a href="javascriptconvert('Sq.%20Feet',1,'Sq. Feet');">Sq. Feet</a></option>
+                                                                <option><a href="javascriptconvert('Cent',19,'Sq. Feet');">Cent</a></option>
+                                                                <option><a href="javascriptconvert('Sq.%20Yards',2,'Sq. Feet');">Sq. Yards</a></option>
+                                                                <option><a href="javascriptconvert('Ares',10,'Sq. Feet');">Ares</a></option>
+                                                                <option><a href="javascriptconvert('Acre',12,'Sq. Feet');">Acres</a></option>
+                                                                <option><a href="javascriptconvert('Sq.%20Meter',3,'Sq. Feet');">Sq. Meter</a></option>
+                                                                <option><a class="bdrB db p2px10px" href="javascriptconvert('Bigha',13,'Sq. Feet');">Bigha</a></option>
+                                                                <option><a class="bdrB db p2px10px" href="javascriptconvert('Hectares',15,'Sq. Feet');">Hectares</a></option>
+                                                                <option><a class="bdrB db p2px10px" href="javascriptconvert('Guntha',9,'Sq. Feet');">Guntha</a></option>
+                                                                <option><a class="bdrB db p2px10px" href="javascriptconvert('Marla',16,'Sq. Feet');">Marla</a></option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><b>Posted On</b></td>
+
+                                                        <td>03-02-2015</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="six columns">
+                                            <div class="font-bold margin-top">
+                                                Seller Detail
+                                                <div class="divider"></div>
+                                            </div>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="font-bold" style="width30%">Contact Person </td>
+                                                        <td>
+                                                            Mr. Mudhusudan
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="font-bold">Mobile </td>
+                                                        <td>
+                                                            +91-9945000444,+91-9900249858,+91-9886095010
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="font-bold">Contact Address </td>
+                                                        <td>
+                                                            F-8, Shalimar Galaxy No -139, First Main Road, Seshadripuram, Bangalore, Karnataka, India
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER  -->
+    <div id="footer" class="container">
+        <div>
+            <h5>Contact Us</h5>
+            <div class="divider divider-thick"></div>
+            <div class="row bgap">
+                <div class="twelve columns">
+                    <div class="pt-sans" id="contactNum">
+                        <div class="u-pull-left">
+                            <i class="circle-icon fa fa-mobile circle-amber margin-right"></i><span>+91-9945000444, &nbsp;+91-9900249858, &nbsp;+91-9886095010</span>
+                            <div class="pt-sans u-cf tgap"><i class="circle-icon fa fa-mail-forward circle-green margin-right"></i>info@krsnaproperties.com</div>
+                        </div>
+                        <div id="fbBtn" class="u-pull-right">
+                            <a class="button u-full-width" target="_blank" href="https://www.facebook.com/Blueboyestates"><i class="circle-icon fa fa-facebook btn-fa circle-blue margin-right"></i>Find us on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider-thick"></div>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="#">Find Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Enquiry.html">Post Property</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="Portfolio.html">Our Work</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="About.html">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <ul class="navbar-list pt-sans">
+                <li class="navbar-item">
+                    <div class="navbar-link  font-s" href="#"><i class="fa fa-copyright"></i>&nbsp;Apartment Shoppe 2015 - 2016</div>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link  font-s" href="#">Terms & Conditions</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
