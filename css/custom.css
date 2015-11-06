@@ -133,6 +133,10 @@ ul.navbar-list.gutter li{
     margin-top: 10px;
 }
 
+.margin-top-l {
+    margin-top: 20px;
+}
+
 .margin-bottom {
     margin-bottom: 10px;
 }
@@ -143,6 +147,10 @@ ul.navbar-list.gutter li{
 
 .margin-left {
     margin-left: 10px;
+}
+
+.margin-left-l {
+    margin-left: 20px;
 }
 
 .margin-right {
@@ -157,6 +165,17 @@ ul.navbar-list.gutter li{
     text-align: center;
 }
 
+.text-right {
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+.align-top{
+    vertical-align: top;
+}
+
 #featured .row .row >.columns, #services .row .row >.columns{
     line-height: 1;
 }
@@ -167,7 +186,7 @@ ul.navbar-list.gutter li{
 
 .navbar-fixed-top {
     position: fixed;
-    top:0;
+    top:0;  
 }
 
 .content {
@@ -182,8 +201,22 @@ ul.navbar-list.gutter li{
     height: 365px;
 }
 
+#company{
+    background: #FFFFFF;
+    width: 400px;
+    height: 140px;
+    box-shadow: 0 5px 15px #e5e5e5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+}
+
 #company img {
-    height: 65px;
+/*    height: 65px;*/
 }
 
 #slider1 .buttons {
@@ -301,8 +334,19 @@ ul.navbar-list.gutter li{
     line-height: 2;
 }
 
+.text-black{
+    color: #333;
+}
+
 .inline-block{
     display: inline-block;
+}
+
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
 }
 
 .circle-icon.circle-icon-plus{
@@ -336,6 +380,13 @@ ul.navbar-list.gutter li{
 .circle-amber {
     color: #ffffff;
     background: #f1c40f;
+}
+
+.navbar{
+    background: #243C82;
+    color: #FFFFFF;
+    border-top: 10px solid #24A9E1;
+    min-height: 100px;
 }
 
 .navbar-s{
