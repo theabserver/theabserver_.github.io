@@ -1,130 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>IIHT Home</title>
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <style>
-        #fillerTop{
-            height: 85%;
-            vertical-align: bottom;
-        }
-        #motto{
-            padding: 5px 0 5px 0;
-            border-top: 2px solid #929BC2;
-            border-bottom: 2px solid #929BC2;
-            letter-spacing: -1.5px;
-        }
-        #motto h2{
-            color: #929BC2;
-        }
-        #organisation{
-            font-size: 3.5em;
-            color: #2A3A87;
-            font-family: "Times New Roman";
-            font-weight: 700;
-        }
-        #contentBG{
-            text-align: center;
-            padding-top: 200px;
-        }
-        #catchphrase h2{
-            font-size: 7em;
-            letter-spacing: 2.5px;
-            font-family: "Geoslab-XBold";
-        }
-        .text-navyblue{
-            color: #223A82;
-        }
-        .shadow-navyblue{
-/*            text-shadow: 5px  3px 5px #223A82;*/
-        }
-        .shadow-lightblue{
-/*            text-shadow: 5px  3px 5px #1DADE2;*/
-        }
-        .text-lightblue{
-            color: #1DADE2;
-        }
-        body{
-            font-family: "Geoslab-Light";
-        }
-        .font-geolight{
-            font-family: "Geoslab-Light";
-        }
-        @font-face{
-            font-family: "Geoslab-Light";
-            src: url('fonts/geoslab703-lt-bt-light.ttf');            
-        }
-        @font-face{
-            font-family: "Geoslab-XBold";
-            src: url('fonts/geoslab703-xbd-bt-extra-bold.ttf');            
-        }
-        #search .fa{
-            background: #FEDF15;
-            padding:11px;
-            border-radius: 10px 0 0px 10px;
-        }
-        #search input{
-            background: #FEDF15;
-            border-radius: 0;
-            border: 0 0 0 10px solid #1D3F89;
-            border: none;
-            border-left: 3px solid #1D3F89;
-            padding-top: 8px;
-            height:37px;
-        }
-        #mainDivider{
-           height: 100px; 
-            border-top: 5px solid #26AADB;
-        }
-        
-        #footer{
-            background: #243C82;
-            height: 100px;
-        }
-        .absolute-center{
-            left: 0;
-            right: 0;
-            margin-left: auto;
-            margin-right: auto;
-        }        
-    </style>
+	<meta charset="UTF-8">
+	<title>Crankmeister Bicycle Works</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/flexcess.css">
+	<link rel="stylesheet" href="css/fa-animate.min.css">	
+	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+
+	<script type="text/javascript">
+		$.fn.picfrenzy = function(){
+			var images = arguments[0]['images'],
+				delay = 2500,
+				previous = 0,
+				$element = $(this),
+				height = arguments[0]['height'] || 150;
+			
+			if(!$element.length)
+				return false;
+			
+			$element.find('img').css('max-height', height).end().find('.border').addClass('tgap-phone');
+			if(!$element.find('.img-desc').length)
+				$element.find('img').after('<div class="img-desc text-center"></div>')
+			$element.find('.img-desc').after('<div class="text-center text-crankred"><i class="fa fa-heart"></i><span class="likes margin-s margin-left">0</span></div>')
+			var object = {
+							key: function(n) {
+								return this[ Object.keys(this)[n] ];
+							}
+						 };
+			
+			function key(obj, idx) {
+			return object.key.call(obj, idx);
+			}
+			
+			var repeat = setInterval(function(){
+				 if(!$element.hasClass('pauseInterval')) {
+					changeImage();
+				}
+			}, delay);
+			
+			function changeImage(){
+				var	count = $element.children().length,
+					nextImg = Math.floor(Math.random() * images.length),
+					newImg = key(images, nextImg),
+					path = 'images/',
+					next = Math.floor(Math.random()*count);
+					
+				if(count == 0)
+					clearInterval(repeat);
+									
+				//don't show an existing image									
+				while($element.find('img[src = "'+ (path + newImg['image']) +'"]').length){
+					nextImg = Math.floor(Math.random() * images.length);
+					newImg = key(images, nextImg)
+				}
+				
+				//don't change a previously changed image
+				while(next == previous)
+					next = Math.floor(Math.random() * count);
+					
+				var $currLi = $element.children().eq(next),
+					$imgContainer = $currLi.find('.border');
+				
+				// $imgContainer.width($imgContainer.width());
+				$imgContainer.height($imgContainer.height())
+				
+				$currLi.find('.border').find('*').fadeOut();
+				setTimeout(function(){
+					$currLi.find('.likes').text(Math.floor(Math.random() * 200));
+					$currLi.find('img').attr('src', path + newImg['image']);
+					$currLi.find('.img-desc').text(newImg['text']);			
+					$currLi.find('.border').find('*').fadeIn();	
+				}, 500)		
+				previous = next;													
+			}
+						
+			$element.hover(function() { //mouse enter
+				$(this).addClass('pauseInterval');
+			},function() { //mouse leave
+				$(this).removeClass('pauseInterval');
+			});  
+		}	
+	
+		$(document).ready(function() {		
+			$('.image-slideshow').picfrenzy({images: [	{image: 'scott.jpg', text: 'Some Scott bike: ₹55,500'},
+														{image: 'surly.jpg', text: 'Some surly bike:  ₹67,500'},
+														{image: 'schwinn_road.jpg', text: 'Some Schwinn bike: ₹43,500'},
+														{image: 'giant.jpg', text: 'Some Giant bike: ₹45,500'}]
+											});
+			
+			$(".lightSlider").slick({
+				autoplay: true,
+				autoplaySpeed: 2000,
+				fade: true,
+				cssEase: 'linear',
+			});
+			$("#brands").slick({
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,				
+				centerMode: true,
+				autowidth:true,
+			});			
+			
+			$('#menu-toggle-links').hide();
+						
+			$('#menu-toggle').click(function(){				
+				$('#menu-toggle-links').slideToggle();
+				return false;
+			});		
+			
+			$(window).resize(function(){
+				$('#menu-toggle-links').hide();				
+			});	
+		});
+	</script>
 </head>
+
 <body>
-    <nav class="navbar">
-            <div id="company">
-                <div class="inline-block" id="fillerTop"></div>
-               <div class="inline-block">
-                   <a title="IIHT"><img src="images/logo.png" alt="IIHT"></a><div class="inline-block" id="organisation">IIHT</div>
-                   <div id="motto"><h2 class="font-xl text-black margin-bottom-none">Connecting talent to Opportunity</h1></div>
-               </div>
-            </div>
-            <div class="flex" style="height:100%"><div class="flex1">asd</div></div>
-    </nav>
-    <div id="contentBG" class="content">
-        <img src="images/iiht-leaf-left.png" class="align-top" alt="" style="height: 270px;">
-        <div class="inline-block text-left margin-left-l" id="catchphrase">
-            <h2>
-                <div class="text-navyblue shadow-lightblue">India's leading</div>
-                <div class="text-lightblue shadow-navyblue">Job Creator</div>
-                <div class="center font-geolight margin-top" style="font-size:20px;">
-                    <div class="text-navyblue">We create industry specific skills</div>
-                    <div class="text-lightblue">We harness talent in young minds</div>
-                </div>
-            </h2>
-        </div>
-        <img src="images/iiht-leaf-right.png" class="align-top" alt="" style="height: 270px;">
-        <div class="container text-right bgap">
-            <div class="text-navyblue font-xl">Find your programme</div>
-            <div id="search"><i class="fa fa-search text-navyblue"></i><input type="text"></div>
-        </div>
-        <div id="mainDivider" class="margin-top-l relative">
-            <img src="images/iiht-graduate.png" alt="" class="absolute absolute-center" style="top:-79px;">
-        </div>
-    </div>
-    <div id="footer"></div>
-    
+	<div class="nav bg-pale">
+		<div class="text-white bg-black center flex font-l pad-s pad-top pad-bot">
+			<ul class="list h-list font-s on-phone" id="contact">
+				<li>
+					<div class="margin-xl margin-right"><i class="fa fa-phone text-crankred faa-tada animated"></i><span class="margin-s margin-left">+91-8861-544666</span></div>
+				</li>
+				<li>
+					<div class="margin-xl margin-right"><i class="fa fa-envelope text-crankred faa-tada animated"></i><span class="margin-s margin-left">inquiries@crankmeisterbicycles.com</span></div>
+				</li>
+				<li>
+					<div id="social" class="tgap-phone">
+						<a href="https://www.facebook.com/crankmeisterbicycleworks" target="blank" title="Follow us on facebook" class="margin-md margin-right faa-parent animated-hover"><i class="faa-tada fa fa-facebook text-crankred font-l"></i></a>
+						<a href="https://www.instagram.com/explore/tags/crankmeister/" target="blank" title="Check us out at Instagram" class="faa-parent animated-hover margin-left margin-l"><i class="faa-tada fa fa-instagram text-crankred font-l"></i></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="container ">
+			<ul class="row ">
+				<li class="col-desktop-3 ">
+					<div>
+						<a href="javascript:void(0)"><img src="images/logo2.png " alt=" "></a>
+					</div>
+				</li>
+				<li class="col-desktop-9 col-phone-12 primary-center pad-s pad-bot">
+					<ul class="toplinks links list h-list list-spacing-xl">
+						<li><a href="javascript:void(0)">Bikes & Accessories</a></li>
+						<li><a href="javascript:void(0)">Services</a></li>
+						<li><a href="javascript:void(0)">Blog</a></li>						
+						<li><a href="javascript:void(0)">About</a></li>
+						<li><a href="javascript:void(0)">Contact</a></li>
+					</ul>
+					<a href="#" id="menu-toggle" class="faa-parent animated-hover hide-on-desktop hide-on-tablet border pad-s pad-all bg-white"><i class="faa-wrench fa fa-wrench text-crankred font-2x"></i></a>
+					<ul class="list v-list margin-top margin-s margin-right bg-white pad-md pad-all border" id="menu-toggle-links">
+						<li class="w-100"><a href="javascript:void(0)">Bikes & Accessories</a></li>
+						<li class="w-100"><a href="javascript:void(0)">Services</a></li>
+						<li class="w-100"><a href="javascript:void(0)">Blog</a></li>						
+						<li class="w-100"><a href="javascript:void(0)">About</a></li>
+						<li class="w-100"><a href="javascript:void(0)">Contact</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="hide-on-phone">
+		<div class="lightSlider margin-none margin-bot">
+			<div class="flex primary-center secondary-end" style="background:url(images/crankmeister-bg.png) center/cover no-repeat;height:600px;width:100% "><h2 class="text-black bg-pale font-3x pad-l pad-all">We just love cycles</h2></div>
+			<div class="flex primary-center secondary-end" style="background:url(images/crankmeister-team.png) center/cover no-repeat;height:600px;width:100% "><h2 class="text-black bg-pale font-3x pad-l pad-all">Crankmeisters say hello!</h2></div>
+		</div>
+	</div>
+	<div class="hide-on-desktop hide-on-tablet ">
+		<div class="lightSlider text-center">
+			<div><img style="height:320px; " src="images/crankmeister-bg.png" alt=" "></div>
+			<div><img style="height:320px; " src="images/crankmeister-team2.png" alt=" "></div>
+		</div>
+	</div>
+	<h1 class="text-center  border-bot margin-l margin-top pad-l pad-bot"><span class="text-crankred">Crankmeister Bicyle Works</span>, <span class="font-s">We sell you the bike that’s right for</span> YOU</h1>
+	
+	<div>
+		<ul class="list v-list hide-on-phone" id="sideLink">
+			<li><a href="javascript:void(0)" title="FAQ Section"  class="faa-pulse animated-hover"><i class="fa fa-question-circle faa-pulse animated-hover"></i></a></li>
+			<li><a href="javascript:void(0)" title="Events Section"  class="faa-pulse animated-hover"><i class="fa fa-rss faa-pulse animated-hover"></i></a></li>
+			<!--<li><a href="https://www.facebook.com/crankmeisterbicycleworks/" target="blank" title="Check us on Facebook" class="faa-pulse animated-hover"><i class="fa fa-facebook faa-pulse animated-hover"></i></a></li>			-->
+		</ul>
+	</div>
+	<div class="container pad-xl pad-bot">
+		<ul class="row pad-xl pad-bot">
+			<li class="col-desktop-12 col-phone-12 col-tablet-12 secondary-center font-l ">
+				<h2 class="font-3x margin-none margin-top margin-xl margin-bot ">
+				<i class="circle-lg fa fa-lightbulb-o align-mid faa-pulse animated "></i> <span class="align-mid margin-l margin-left
+					">Learn about us</span> <i class="align-mid circle-lg fa fa-lightbulb-o margin-l margin-left faa-pulse animated"></i>
+				</h2>
+				<div class="margin-xl margin-top w-100 pad-xl pad-bot">
+						<iframe src="https://player.vimeo.com/video/75499041 " width="100% " height="500 " frameborder="0 " webkitallowfullscreen
+						mozallowfullscreen allowfullscreen></iframe>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="border-bot "></div>
+		<div class="bg-pale pad-xl pad-bot border-bot">
+			<div class="container font-l">
+				<ul class="row ">
+					<li class="col-desktop-12 secondary-center ">
+						<h3 class="font-3x ">Brands we sell</h3>
+					</li>
+				</ul>
+			</div>
+			<div id="brands">
+				<div>
+					<img src="images/schwinn.png" alt=" " />
+				</div>
+				<div>
+					<img src="images/Scott-Logo.png" alt=" " />
+				</div>
+				<div>
+					<img src="images/Surly-logo.png" alt=" " />
+				</div>
+				<div>
+					<img src="images/giant-logo.png" alt=" " />
+				</div>
+				<!--<div>
+					<img src="images/logo-merida.png" alt=" " />
+				</div>-->
+			</div>
+		</div>
+		<div class="border-bot pad-xl pad-bot margin-xl margin-top">
+			<div class="container">
+				<ul class="row">
+					<li class="col-desktop-12">
+						<h3 class="text-center font-3x">Popular choices</h3>						
+					</li>
+				</ul>
+				<ul class="row image-slideshow">
+					<li class="col-desktop-4">
+						<div class="border pad-md pad-all">
+							<a href="javascript:void(0)"><img src="images/schwinn_road.jpg" style="width:90%;" alt="" >
+							<div class="img-desc text-center">Some Schwinn bike: ₹43,500</div></a>
+						</div>																
+					</li>
+					<li class="col-desktop-4">
+						<div class="border pad-md pad-all">
+							<a href="javascript:void(0)"><img src="images/surly.jpg" style="width:90%" alt="">
+							<div class="img-desc text-center">Some Surly bike: ₹67,500</div></a>
+						</div>									
+					</li>
+					<li class="col-desktop-4">
+						<div class="border pad-md pad-all">
+							<a href="javascript:void(0)"><img src="images/scott.jpg" style="width:90%" alt="" >
+							<div class="img-desc text-center">Some Scott bike: ₹55,500</div></a>
+						</div>
+					</li>
+				</ul>
+				<ul class="row margin-xl margin-top">
+					<li class="col-desktop-12">
+						<h3 class="text-center font-3x">What our customers say</h3>						
+					</li>
+				</ul>
+				<ul class="row">
+					<li class="col-desktop-4">
+						<div class="border pad-s pad-all bg-lighten-5">
+							<ul class="row">
+								<li class="col-desktop-3">
+									<img src="images/prashanth-testimonial.jpg" alt="">
+								</li>
+								<li class="col-desktop-9">
+									<i class="fa fa-quote-left text-crankred"></i>								
+									<span>
+										1 yr 8 months since I bought my bicycle from here, every time I get on the saddle and push the pedal and begin to enjoy my ride <p>I thank Crankmeister guiding me buy the right one.</p>
+									</span>
+								</li>
+							</ul>
+							<h5 class="font-l margin-none margin-all"> - <a href="https://www.facebook.com/prashanth.uc" target="blank" class="text-crankred">Prashanth Uc</a></h5>		
+						</div>				
+					</li>
+					<li class="col-desktop-4">
+						<div class="border pad-s pad-all bg-lighten-5">
+							<ul class="row">
+								<li class="col-desktop-3">
+									<img src="images/rishab-testimonial.jpg" alt="">
+								</li>
+								<li class="col-desktop-9">
+									<i class="fa fa-quote-left text-crankred"></i>								
+									<span>
+										Because I love these guys! Very true to their word! Their passion overflows in all the work they do and the products they sell... They'll defined go a long way!
+Kudos Cranky Boys!
+									</span>
+								</li>
+							</ul>
+							<h5 class="font-l margin-none margin-all"> - <a href="https://www.facebook.com/rishabk" target="blank" class="text-crankred">Rishab Kannambille</a></h5>		
+						</div>			
+					</li>
+					<li class="col-desktop-4">
+						<div class="border pad-s pad-all bg-lighten-5 w-100">
+							<ul class="row">
+								<li class="col-desktop-3">
+									<img src="images/monica-testimonial.jpg" alt="">
+								</li>
+								<li class="col-desktop-9">
+									<i class="fa fa-quote-left text-crankred"></i>								
+									<div>
+										I've had the good fortune to watch this business grow from day one. <p>The guys are very focussed to make sure they are on top of their game - constantly learning & getting better, bringing new experiences to the store, its customers and themselves.</p>
+									</span>
+								</li>
+							</ul>
+							<h5 class="font-l margin-none margin-all"> - <a href="javascript:void(0)" class="text-crankred">Monica Pillai</a></h5>		
+						</div>				
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer" class="pad-xl pad-top pad-bot nav bg-pale">
+			<div class="container">
+				<ul class="row">
+					<li class="col-desktop-12">
+						<ul class="list v-list list-spacing-s">
+							<li>
+								<div>
+									<a href="javascript:void(0)"><img src="images/logo2.png" style="height:80px" alt=""></a>
+								</div>
+							</li>
+							<li>
+								<div>
+									<ul class="row">
+										<li class="col-desktop-6 pad-none pad-bot margin-l margin-top">
+											<ul class="list v-list list-spacing-l">
+												<li>
+													<div>Tuesdays-Fridays: 10AM to 7PM</div>
+												</li>
+												<li>
+													<div>
+														Saturdays-Sundays: 11AM to 6PM
+													</div>
+												</li>
+												<li>
+													<div>
+														Mondays: <span class="text-crankred">Closed</span>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li class="col-desktop-6 pad-none pad-bot margin-l margin-top">
+											<div>
+												<ul class="list v-list list-spacing-l">
+													<li>
+														<div><i class="fa fa-envelope text-crankred faa-wrench animated"></i><span class="margin-s margin-left">inquiries@crankmeisterbicycles.com</span></div>
+													</li>
+													<li>
+														<div><i class="fa fa-phone text-crankred faa-wrench animated"></i><span class="margin-s margin-left">+91-8861-544666</span></div>
+													</li>
+													<li>
+														<ul class="list h-list">
+															<li>
+																<div><i class="fa fa-map-marker text-crankred faa-wrench animated"></i></div>
+															</li>
+															<li>
+																<div>
+																	<div>Crankmeister Bicycle Works</div>
+																	<div class="margin-s margin-top">124/2, MM Road, Frazer Town</div>
+																	<div class="margin-s margin-top">(Next to Everest Theatre)</div>
+																	<div class="margin-s margin-top">Bangalore – 560005</div>
+																</div>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="border-bot tgap-phone">
+									<iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.557671181673!2d77.61817299999998!3d13.000119000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16ee820a9499%3A0x28bcdd6bd1e0d324!2sCrankmeister++Works!5e0!3m2!1sen!2sin!4v1434207304869"
+									width="100%" height="300" frameborder="0"></iframe>
+								</div>
+							</li>
+							<li>
+								<div style="float:right">
+									<ul class="links list h-list list-spacing-xl pad-md pad-top">
+										<li>
+											<a href="https://www.facebook.com/crankmeisterbicycleworks" target="blank" title="Follow us on facebook"><i class="fa fa-facebook"></i></a>
+										</li>
+										<li>
+											<a href="https://www.instagram.com/explore/tags/crankmeister/" target="blank" title="Check us out at Instagram"><i class="fa fa-instagram"></i></a>
+										</li>
+									</ul>
+								</div>
+								<ul class="links list h-list list-spacing-xl pad-md pad-top">
+									<li>
+										<a href="javascript:void(0)">Terms & Conditions</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">About</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">Testimonials</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">Blog</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">Contact</a>
+									</li>
+								</ul>
+								
+							</li>
+							<li>
+								<div class="font-s">
+									<h1 class="font-l"><i class="fa fa-copyright"></i><span class="margin-s margin-left">Crankmeister Bicycle Works</span></h1></div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
 </body>
+
 </html>
