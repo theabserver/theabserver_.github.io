@@ -194,7 +194,7 @@
         -ms-flex-align: flex-start;
     }
     
-    #footer .links.list.h-list,.nav .list.h-list{
+    #footer .links.list.h-list, #contact{
         display: -webkit-box;
         display: -moz-box;
         display: box;
